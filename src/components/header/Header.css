@@ -1,0 +1,15 @@
+header {
+    padding: 15px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+.nav {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+    font-size: 35px;
+}
+.nav.active {
+    font-weight: bold;
+    color: orangered;
+}
