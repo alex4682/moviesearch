@@ -2,7 +2,7 @@ import { Header } from "../header/Header.jsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const Movies = ({setId}) => {
+export const Movies = () => {
     const [movies, setMovies] = useState(null);
     const [q, setQ] = useState("");
     const options = {
@@ -32,7 +32,7 @@ export const Movies = ({setId}) => {
             </form>
             <ul>{movies && movies.map(movie => (
                 <li key={movie.id}>
-                    <Link to={`/movies/${movie.id}`} onClick = {() => setId(movie.id)}>{movie.title}</Link>
+                    <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
                 </li>
             ))}</ul>
         </div>

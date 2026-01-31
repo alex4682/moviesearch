@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "../header/Header";
 
-export const Main = (setId) => {
+export const Main = () => {
     const [movies, setMovies] = useState([]);
     const options = {
         method: 'GET',
@@ -27,7 +27,7 @@ export const Main = (setId) => {
             <ul>
                 {movies.map(movie => (
                     <li key={movie.id}>
-                        <Link to={`/movies/${movie.id}`} onClick={() => setId(movie.id)}>{movie.title}</Link>
+                        <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
                     </li>
                 ))}
             </ul>

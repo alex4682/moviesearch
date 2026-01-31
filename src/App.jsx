@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { Main } from "./components/main/Main";
 import { Movie } from "./components/movies/Movie";
 import { Movies } from "./components/movies/Movies";
@@ -7,7 +7,7 @@ import { Reviews } from "./components/movies/Reviews";
 
 export const App = () => {
     return (
-        <BrowserRouter basename="/moviesearch">
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/movies" element={<Movies />} />
@@ -15,6 +15,6 @@ export const App = () => {
                 <Route path="/movies/:id/actors" element={<Actors />} />
                 <Route path="/movies/:id/reviews" element={<Reviews />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
