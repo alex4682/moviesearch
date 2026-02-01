@@ -1,8 +1,10 @@
 import { Header } from "../header/Header.jsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Movies = () => {
+    const navigate = useNavigate();
     const [movies, setMovies] = useState(null);
     const [q, setQ] = useState("");
     const options = {
@@ -14,6 +16,7 @@ export const Movies = () => {
     };
     const search = (e) => {
         e.preventDefault();
+        navigate('/movies?q=' + q);
         fetch('https://api.themoviedb.org/3/search/movie?language=en-US&query=' + q, options)
             .then(response => response.json())
             .then(data => {
